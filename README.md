@@ -1,14 +1,31 @@
 # some_dart_utils
 
-A new Flutter package.
+A dart package which can perform deepCopy on maps and lists
 
-## Getting Started
+## recursiveMapCopy()
+As we know Map.from() performs only shallowCopy, you can use recursiveMapCopy() for deepCopying a map.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## recursiveListCopy()
+As we know List.from() performs only shallowCopy, you can use recursiveListCopy() for deepCopying a list.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Info
+
+var temp = {
+    "lev1": {
+        "lev2" : {
+            "1":1,
+            "2":2,
+            "lev3":{
+                "name": [true, true]
+            }
+        }
+    }
+};
+
+var tempSCopy = Map.from(temp);
+var tempDCopy = recursiveMapCopy(temp);
+
+temp["lev1"]["lev2"]["1"] = 11;
+
+print(tempSCopy["lev1"]["lev2"]["1"]); // 11
+print(tempDCopy["lev1"]["lev2"]["1"]); // 1

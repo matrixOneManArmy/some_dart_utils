@@ -1,8 +1,8 @@
 name: some_dart_utils
-description: A new Flutter package.
+description: A dart package which can perform deepCopy on maps and lists
 version: 0.0.1
-author:
-homepage:
+author: Mohan Mata<mohank23.developer@gmail.com>
+homepage: https://github.com/matrixOneManArmy/some_dart_utils.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
