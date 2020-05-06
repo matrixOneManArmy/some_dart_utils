@@ -6,7 +6,7 @@ library some_dart_utils;
   Also a helper method for the below.
 */
 Map recursiveMapCopy(Map other){
-  assert (other!=null, "other shouldn't be a null value");
+  if (other==null) return null;
   Map result = {};
   other.forEach((key, value) {
     if (value is Map)
@@ -25,7 +25,7 @@ Map recursiveMapCopy(Map other){
   Also a helper method for the above.
 */
 List recursiveListCopy(Iterable other){
-  assert (other!=null, "other shouldn't be a null value");
+  if (other==null) return null;
   List result = [];
   other.forEach((element) {
     if (element is Map)
